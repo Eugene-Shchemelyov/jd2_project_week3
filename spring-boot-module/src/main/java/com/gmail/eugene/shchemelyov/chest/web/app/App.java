@@ -1,4 +1,4 @@
-package com.gmail.eugene.shchemelyov.chest.web;
+package com.gmail.eugene.shchemelyov.chest.web.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
