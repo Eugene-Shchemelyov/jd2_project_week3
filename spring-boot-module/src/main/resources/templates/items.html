@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Items</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <a th:href="@{/add}">Add item</a>
+</head>
+<body>
+<th:block th:each="item,stat : ${items}">
+    <li th:text="${stat.count} + ' ' + ${item.name}"></li>
+    <form action="#" th:action="@{/changeStatus}" th:object="${itemDTO}" method="post">
+        <input hidden value="#" th:attr="value=${item.id}" th:name="id"/>
+        <select name="status">
+            <ul th:switch="${item.status}">
+                <li th:case="READY">
+                    <option value="READY" selected disabled>Ready</option>
+                    <option value="COMPLETED">Completed</option>
+                </li>
+                <li th:case="COMPLETED">
+                    <option value="READY">Ready</option>
+                    <option value="COMPLETED" selected disabled>Completed</option>
+                </li>
+            </ul>
+        </select>
+        <input type="submit" value="change">
+    </form>
+</th:block>
+</body>
+</html>
