@@ -1,6 +1,6 @@
 package com.gmail.eugene.shchemelyov.chest.service.enums;
 
-public enum ActionEnum {
+public enum AuditItemStatusEnum {
     CREATED,
     UPDATED
 }

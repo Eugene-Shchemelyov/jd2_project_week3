@@ -1,11 +1,22 @@
 package com.gmail.eugene.shchemelyov.chest.repository.model;
 
-import com.gmail.eugene.shchemelyov.chest.repository.enums.StatusEnum;
+import com.gmail.eugene.shchemelyov.chest.repository.enums.ItemStatusEnum;
 
 public class Item {
     private Long id;
     private String name;
-    private StatusEnum statusEnum;
+    private ItemStatusEnum itemStatusEnum;
+    private Boolean isDeleted;
+
+    public Item(Long id,
+                String name,
+                ItemStatusEnum itemStatusEnum,
+                Boolean isDeleted) {
+        this.id = id;
+        this.name = name;
+        this.itemStatusEnum = itemStatusEnum;
+        this.isDeleted = isDeleted;
+    }
 
     public Long getId() {
         return id;
@@ -23,11 +34,19 @@ public class Item {
         this.name = name;
     }
 
-    public StatusEnum getStatusEnum() {
-        return statusEnum;
+    public ItemStatusEnum getItemStatusEnum() {
+        return itemStatusEnum;
     }
 
-    public void setStatusEnum(StatusEnum statusEnum) {
-        this.statusEnum = statusEnum;
+    public void setItemStatusEnum(ItemStatusEnum itemStatusEnum) {
+        this.itemStatusEnum = itemStatusEnum;
+    }
+
+    public Boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(Boolean deleted) {
+        isDeleted = deleted;
     }
 }

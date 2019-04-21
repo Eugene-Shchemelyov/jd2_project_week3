@@ -1,6 +1,6 @@
 package com.gmail.eugene.shchemelyov.chest.repository.enums;
 
-public enum StatusEnum {
+public enum ItemStatusEnum {
     READY,
     COMPLETED
 }
